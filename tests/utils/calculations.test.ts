@@ -4,7 +4,7 @@ import {
   calculateMeetingCost,
   getCostPerSecond,
   getAverageHourlyRate,
-} from './calculations'
+} from '~/utils/calculations'
 import type { Participant } from '~/types'
 
 const WORKING_HOURS_PER_YEAR = 2080

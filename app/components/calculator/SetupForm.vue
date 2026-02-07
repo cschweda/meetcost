@@ -40,7 +40,10 @@ function buildParticipantConfigs() {
   participantConfigs.value = next
 }
 
-watch(numberOfPeople, buildParticipantConfigs, { immediate: true })
+watch(numberOfPeople, (val) => {
+  if (val < 2) numberOfPeople.value = 2
+  else buildParticipantConfigs()
+}, { immediate: true })
 
 const validationErrors = computed(() => {
   const errors: string[] = []

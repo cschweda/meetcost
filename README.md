@@ -21,7 +21,7 @@ MeetCost is a real-time meeting cost calculator that makes meeting waste visible
 - **Duration adjustment** — Forgot to stop? Adjust duration on the receipt; cost updates in real time and auto-saves when focus leaves the adjustment field
 - **Meeting history** — Meetings saved in local storage; adjust duration and view past receipts
 - **Public vs. private sector** — Tag meetings as taxpayer-funded (public) or company dollars (private)
-- **Meeting types** — Quick-select from General, Stand Up, Touch Base, 1:1, Sprint Planning, and more
+- **Meeting types** — Quick-select from General, Stand Up, Touch Base, Sprint Planning, and more
 - **Privacy-first** — All computation runs in your browser; no data is sent to any server
 
 ## How it works
@@ -69,6 +69,13 @@ yarn preview
 yarn test
 ```
 
+### Testing
+
+Tests live in the `tests/` directory at the project root, mirroring the `app/` structure. Run with `yarn test`. Coverage includes:
+
+- **utils/** — calculations, formatting, sanitize, comparisons
+- **composables/** — useCalculator (buildMeeting, createParticipantsFromQuickMode)
+
 ### Using nvm
 
 ```bash
@@ -86,8 +93,12 @@ app/
 ├── layouts/                 # default, calculator
 ├── pages/                   # index, calculate, about, history
 ├── types/                   # Meeting, Participant, SectorType, etc.
-├── utils/                   # formatting, calculations, comparisons (+ tests)
+├── utils/                   # formatting, calculations, comparisons, sanitize
 └── app.vue
+
+tests/                       # Vitest unit tests (separate from app)
+├── composables/             # useCalculator tests
+└── utils/                   # calculations, formatting, sanitize, comparisons tests
 
 public/                      # Static assets (favicon, screenshots)
 meetcost.config.ts           # Single source of truth for app config

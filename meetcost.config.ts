@@ -21,7 +21,6 @@ export const meetcostConfig = {
     'General',
     'Stand Up',
     'Touch Base',
-    '1:1',
     'Sprint Planning',
     'Retrospective',
     'All Hands',
