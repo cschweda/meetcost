@@ -1,6 +1,6 @@
 # MeetCost
 
-**Organization dollars burning in real time—every meeting.**
+**See the real cost of every meeting.**
 
 MeetCost is a real-time meeting cost calculator that makes meeting waste visible. Track the true cost of meetings with a live-ticking counter, shareable receipts, and support for both private-sector and taxpayer-funded (public-sector) contexts.
 
