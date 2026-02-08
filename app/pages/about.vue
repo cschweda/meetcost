@@ -275,9 +275,9 @@ useSeoMeta({
                 <p><strong>Participants:</strong> 75 people at $75K/year · <strong>Duration:</strong> 8am–4:30pm with 1 hr lunch = 7.5 hours</p>
               </div>
               <ul class="text-muted text-sm mb-4 space-y-1 list-none">
-                <li><strong>Meeting cost:</strong> 75 × ($75,000 ÷ 2,080) × 7.5 hrs = <strong class="text-highlighted">~$20,253</strong> per meeting</li>
-                <li>Quarterly (4×/year): <strong class="text-highlighted">~$81,000</strong> annually</li>
-                <li>Agency pays $20,253/meeting</li>
+                <li><strong>Meeting cost:</strong> 75 × ($75,000 ÷ 2,080) × 7.5 hrs = <strong class="text-highlighted">~$20,282</strong> per meeting</li>
+                <li>Quarterly (4×/year): <strong class="text-highlighted">~$81,130</strong> annually</li>
+                <li>Agency pays $20,282/meeting</li>
               </ul>
               <div class="rounded-lg bg-default/50 p-4 text-sm">
                 <p class="font-medium text-highlighted mb-2">Business equivalent:</p>
@@ -295,8 +295,8 @@ useSeoMeta({
                 </ul>
                 <p class="font-medium text-highlighted mt-3 mb-2">Lunch-break equivalent:</p>
                 <ul class="text-muted space-y-1 text-sm list-disc list-inside">
-                  <li>Per meeting: ~4,500 lattes or ~2,130 burritos</li>
-                  <li>Per year: ~18,000 lattes or ~8,500 burritos</li>
+                  <li>Per meeting: ~3,380 lattes ($6) or ~1,690 burritos ($12)</li>
+                  <li>Per year: ~13,500 lattes or ~6,760 burritos</li>
                 </ul>
                 <p class="text-muted text-sm mt-2 italic">—Retreats serve team-building. But routine "all hands" updates could often be a Slack or Teams message instead.</p>
               </div>
@@ -318,7 +318,7 @@ useSeoMeta({
               </div>
               <ul class="text-muted text-sm mb-4 space-y-1 list-none">
                 <li><strong>Meeting cost:</strong> 5 × ($110,000 ÷ 2,080) × 0.25 hr = <strong class="text-highlighted">$66</strong> per meeting</li>
-                <li>Per year (~260 days): <strong class="text-highlighted">~$17,160</strong></li>
+                <li>Per year (~260 days): <strong class="text-highlighted">~$17,188</strong></li>
                 <li>Company pays $66/meeting</li>
               </ul>
               <div class="rounded-lg bg-default/50 p-4 text-sm">
@@ -406,7 +406,7 @@ useSeoMeta({
                 </ul>
                 <p class="font-medium text-highlighted mt-3 mb-2">Lunch-break equivalent:</p>
                 <ul class="text-muted space-y-1 text-sm list-disc list-inside">
-                  <li>~5,360 lattes or ~2,540 burritos</li>
+                  <li>~4,020 lattes ($6) or ~2,010 burritos ($12)</li>
                 </ul>
                 <p class="text-muted text-sm mt-2 italic">—Full-day in-person gatherings at scale carry a steep cost. Much of the employee burden (commute, parking, lunch) is paid out of pocket—often by people who could have received the same updates remotely.</p>
               </div>
@@ -435,7 +435,7 @@ useSeoMeta({
                 <ul class="text-muted space-y-1 text-sm list-disc list-inside">
                   <li>~5 hours of consultant time ($175/hr)</li>
                   <li>12 enterprise software licenses per month ($75 each)</li>
-                  <li>1.2 training course seats ($750 each)</li>
+                  <li>~1 training course seat ($750 each)</li>
                 </ul>
                 <p class="font-medium text-highlighted mt-3 mb-2">Lunch-break equivalent:</p>
                 <ul class="text-muted space-y-1 text-sm list-disc list-inside">
@@ -502,11 +502,10 @@ useSeoMeta({
                 <ul class="text-muted space-y-1 text-sm list-disc list-inside">
                   <li>~4 hours of consultant time ($175/hr)</li>
                   <li>9 enterprise software licenses per month ($75 each)</li>
-                  <li>1 conference registration ($1,200)</li>
                 </ul>
                 <p class="font-medium text-highlighted mt-3 mb-2">Lunch-break equivalent:</p>
                 <ul class="text-muted space-y-1 text-sm list-disc list-inside">
-                  <li>~118 lattes or ~59 burritos</li>
+                  <li>~118 lattes ($6) or ~59 burritos ($12)</li>
                 </ul>
                 <p class="text-muted text-sm mt-2 italic">—Board meetings drive governance. But nonprofits run lean—every dollar diverted to meetings is one less for mission. Hybrid or async options can trim cost without losing alignment.</p>
               </div>
