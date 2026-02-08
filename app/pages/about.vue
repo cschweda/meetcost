@@ -80,9 +80,9 @@ useSeoMeta({
         The receipt itemizes <strong>Company pays</strong> (meeting time) vs <strong>Each employee pays (avg)</strong> (per-person average—not exact; commute, daycare, coffee, etc. vary) and <strong>All employees together pay</strong> (total), so it’s clear who bears which cost.
       </p>
 
-      <p class="text-muted leading-relaxed mb-6">
-        <strong>Examples:</strong>
-      </p>
+      <h2 id="examples" class="text-xl font-semibold text-highlighted mt-10 mb-3">
+        Examples
+      </h2>
       <p class="text-muted leading-relaxed text-sm mb-6 italic">
         All salary and hourly rates in these examples are best guesses. Actual costs may be higher depending on your organization's compensation.
       </p>
@@ -105,6 +105,11 @@ useSeoMeta({
                   <li>About 20-25 minutes of consultant time ($175/hr)</li>
                   <li>1 enterprise software license per month</li>
                   <li>4 project management licenses for a year ($15/mo each)</li>
+                </ul>
+                <p class="font-medium text-highlighted mt-3 mb-2">The lunch-break equivalent:</p>
+                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
+                  <li>~11 lattes or salads</li>
+                  <li>~5 burritos</li>
                 </ul>
                 <p class="text-muted text-sm mt-2 italic">—Could this have been a Slack or Teams message? Async updates often work for status syncs.</p>
               </div>
@@ -136,6 +141,11 @@ useSeoMeta({
                   <li>1 conference registration ($1,200)</li>
                   <li>86 hours of consultant time ($175/hr)</li>
                 </ul>
+                <p class="font-medium text-highlighted mt-3 mb-2">The lunch-break equivalent:</p>
+                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
+                  <li>Per meeting: ~48 lattes or ~24 burritos</li>
+                  <li>Per year: ~2,500 lattes or ~1,250 burritos</li>
+                </ul>
                 <p class="text-muted text-sm mt-2 italic">—Could this have been a Slack or Teams message? Weekly syncs often repeat the same info—a shared doc or async update might suffice.</p>
               </div>
             </div>
@@ -154,11 +164,16 @@ useSeoMeta({
                 15 people (avg $95K/year), 1-hour in-person unit meeting. <strong class="text-highlighted">Meeting cost:</strong> 15 × ($95,000 ÷ 2,080) × 1 = $685. <strong class="text-highlighted">In-person tax</strong> (30 min commute, $15/person for coffee/parking): commute = $685 × (30÷60) = $343; extras = 15 × $15 = $225; in-person total = $568. <strong class="text-highlighted">Total:</strong> $685 + $568 = <strong class="text-highlighted">$1,253</strong> (company pays $685; employees pay $568).
               </p>
               <div class="rounded-lg bg-default/50 p-4 text-sm">
-                <p class="font-medium text-highlighted mb-2">Business equivalent:</p>
+                <p class="font-medium text-highlighted mb-2">Business equivalent (total incl. in-person tax):</p>
                 <ul class="text-muted space-y-1 text-sm list-disc list-inside">
-                  <li>4 hours of consultant time ($175/hr)</li>
-                  <li>Half a conference registration ($1,200)</li>
-                  <li>9 enterprise software licenses per month ($75 each)</li>
+                  <li>~7 hours of consultant time ($175/hr)</li>
+                  <li>1 conference registration ($1,200)</li>
+                  <li>17 enterprise software licenses per month ($75 each)</li>
+                </ul>
+                <p class="font-medium text-highlighted mt-3 mb-2">The lunch-break equivalent:</p>
+                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
+                  <li>~210 lattes or salads</li>
+                  <li>~105 burritos</li>
                 </ul>
                 <p class="text-muted text-sm mt-2 italic">—Could this have been a Slack or Teams message? Large meetings sap concentration from knowledge workers; a thread or announcement often reaches everyone without the cost.</p>
               </div>
@@ -191,6 +206,11 @@ useSeoMeta({
                   <li>63 laptop replacements ($1,200 each)</li>
                   <li>Full-time entry-level public-sector salary</li>
                 </ul>
+                <p class="font-medium text-highlighted mt-3 mb-2">The lunch-break equivalent:</p>
+                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
+                  <li>Per meeting: ~3,150 lattes or ~1,575 burritos</li>
+                  <li>Per year: ~12,600 lattes or ~6,300 burritos</li>
+                </ul>
                 <p class="text-muted text-sm mt-2 italic">—Retreats serve team-building. But routine "all hands" updates could often be a Slack or Teams message instead.</p>
               </div>
             </div>
@@ -221,6 +241,11 @@ useSeoMeta({
                   <li>208 enterprise software licenses per month ($75 each)</li>
                   <li>89 hours of consultant time ($175/hr)</li>
                 </ul>
+                <p class="font-medium text-highlighted mt-3 mb-2">The lunch-break equivalent:</p>
+                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
+                  <li>Per day: ~10 lattes or ~5 burritos</li>
+                  <li>Per year: ~2,600 lattes or ~1,300 burritos</li>
+                </ul>
                 <p class="text-muted text-sm mt-2 italic">—Could this have been a Slack or Teams message? Daily standups often could—async updates can be just as effective without disrupting deep work for makers and creatives.</p>
               </div>
             </div>
@@ -239,10 +264,15 @@ useSeoMeta({
                 4 people at $90K/year, 1-hour in-person kickoff. <strong class="text-highlighted">Meeting cost:</strong> 4 × ($90,000 ÷ 2,080) × 1 = $173. <strong class="text-highlighted">In-person tax</strong> (30 min commute, $20/person for coffee/parking): commute = $173 × (30÷60) = $87; extras = 4 × $20 = $80; in-person total = $167. <strong class="text-highlighted">Total:</strong> $173 + $167 = <strong class="text-highlighted">$340</strong> (company pays $173; employees pay $167, ~$42 avg per person).
               </p>
               <div class="rounded-lg bg-default/50 p-4 text-sm">
-                <p class="font-medium text-highlighted mb-2">Business equivalent:</p>
+                <p class="font-medium text-highlighted mb-2">Business equivalent (total incl. in-person tax):</p>
                 <ul class="text-muted space-y-1 text-sm list-disc list-inside">
                   <li>~2 hours of consultant time ($175/hr)</li>
-                  <li>4 enterprise licenses per month ($75 each)</li>
+                  <li>4–5 enterprise licenses per month ($75 each)</li>
+                </ul>
+                <p class="font-medium text-highlighted mt-3 mb-2">The lunch-break equivalent:</p>
+                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
+                  <li>~57 lattes or salads</li>
+                  <li>~28 burritos (or a Chipotle party for the whole team)</li>
                 </ul>
                 <p class="text-muted text-sm mt-2 italic">—In-person has value for relationship-building. But the hidden employee cost (commute, parking, daycare) is real—often paid out of pocket.</p>
               </div>

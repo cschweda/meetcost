@@ -4,6 +4,7 @@ import {
   calculateMeetingCost,
   getCostPerSecond,
   getAverageHourlyRate,
+  calculateInPersonCost,
 } from '~/utils/calculations'
 import type { Participant } from '~/types'
 
@@ -190,6 +191,63 @@ describe('calculateMeetingCost', () => {
     const result = calculateMeetingCost([p], 3600)
     expect(result.error).toBeDefined()
     expect(result.cost).toBe(0)
+  })
+})
+
+describe('calculateInPersonCost', () => {
+  it('returns 0 for empty participants', () => {
+    expect(calculateInPersonCost([], 30, 0)).toBe(0)
+  })
+
+  it('returns 0 when all participants are inactive', () => {
+    const p = fulltimeParticipant('1', 90000)
+    p.isActive = false
+    expect(calculateInPersonCost([p], 30, 0)).toBe(0)
+  })
+
+  it('calculates commute cost: totalHourlyRate × (commuteMinutes ÷ 60)', () => {
+    const participants = [
+      fulltimeParticipant('1', 90000), // ~43.27/hr
+      fulltimeParticipant('2', 90000), // ~43.27/hr
+    ]
+    const totalHourlyRate = participants[0].effectiveHourlyRate + participants[1].effectiveHourlyRate
+    // 30 min commute: totalHourlyRate × 0.5
+    const expected = totalHourlyRate * (30 / 60)
+    expect(calculateInPersonCost(participants, 30, 0)).toBeCloseTo(expected, 2)
+  })
+
+  it('adds extras per person', () => {
+    const participants = [
+      fulltimeParticipant('1', 90000),
+      fulltimeParticipant('2', 90000),
+      fulltimeParticipant('3', 90000),
+    ]
+    const commuteOnly = calculateInPersonCost(participants, 30, 0)
+    const withExtras = calculateInPersonCost(participants, 30, 15)
+    const expectedExtras = 3 * 15
+    expect(withExtras - commuteOnly).toBe(expectedExtras)
+  })
+
+  it('15 people at $95K, 30 min commute, $15/person extras ≈ $568', () => {
+    const participants: Participant[] = []
+    for (let i = 0; i < 15; i++) {
+      participants.push(fulltimeParticipant(`p${i}`, 95000))
+    }
+    const totalHourlyRate = 15 * (95000 / 2080)
+    const commuteCost = totalHourlyRate * (30 / 60)
+    const extrasCost = 15 * 15
+    const expected = commuteCost + extrasCost
+    expect(calculateInPersonCost(participants, 30, 15)).toBeCloseTo(expected, 0)
+    expect(calculateInPersonCost(participants, 30, 15)).toBeCloseTo(568, 0)
+  })
+
+  it('ignores inactive participants', () => {
+    const active = fulltimeParticipant('1', 90000)
+    const inactive = fulltimeParticipant('2', 90000)
+    inactive.isActive = false
+    const costWithBoth = calculateInPersonCost([active, inactive], 30, 10)
+    const costWithActiveOnly = calculateInPersonCost([active], 30, 10)
+    expect(costWithBoth).toBe(costWithActiveOnly)
   })
 })
 

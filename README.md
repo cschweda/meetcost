@@ -6,6 +6,8 @@
 
 MeetingBurn is a real-time meeting cost calculator that makes meeting waste visible. Track the true cost of meetings with a live-ticking counter, shareable receipts, and support for both private-sector and taxpayer-funded (public-sector) contexts.
 
+![MeetingBurn](public/og-image.png)
+
 ## Screenshots
 
 | | |
@@ -18,7 +20,8 @@ MeetingBurn is a real-time meeting cost calculator that makes meeting waste visi
 - **Live cost counter** — Watch dollars tick up every second during meetings
 - **Color-coded thresholds** — Green ($0–500), yellow ($501–2,000), red ($2,001+)
 - **Milestone alerts** — Toast notifications at $500, $1K, $5K, and $10K
-- **Industry presets** — One-tap setup for Tech, Government, Consulting, Agency, Corporate, and Startup
+- **Remote vs. in-person** — Choose meeting format; in-person meetings add optional "in-person tax" (commute time value + extras like coffee, parking) typically paid by employees
+- **Industry presets** — One-tap setup for Tech, Government, Consulting, Agency, Corporate, and 20+ industries
 - **Setup flow** — Configure participants (full-time salary, contractor hourly, or unknown/estimate); meeting type; and sector (public/private)
 - **Meeting timer** — Shows participant count, meeting type, and average hourly rate with an info popup
 - **Pause & resume** — Pause tracking when meetings go off-topic
@@ -41,7 +44,8 @@ MeetingBurn is a real-time meeting cost calculator that makes meeting waste visi
 
 - **Full-time salary:** Hourly rate = annual salary ÷ 2,080 (40 hrs/week × 52 weeks)
 - **Contractor / unknown:** Hourly rate = the rate you enter
-- **Total cost:** (Sum of all hourly rates) × (duration in seconds) ÷ 3,600
+- **Meeting cost:** (Sum of all hourly rates) × (duration in seconds) ÷ 3,600
+- **In-person tax (optional):** Commute time value + extras per person (coffee, parking, etc.). Itemized by company vs. employee on the receipt.
 
 See the [About](/about) page for a detailed explanation and examples.
 
@@ -80,8 +84,8 @@ yarn test
 
 Tests live in the `tests/` directory at the project root, mirroring the `app/` structure. Run with `yarn test`. Coverage includes:
 
-- **utils/** — calculations, formatting, sanitize, comparisons
-- **composables/** — useCalculator (buildMeeting, createParticipantsFromQuickMode)
+- **utils/** — calculations (including `calculateInPersonCost`), formatting, sanitize, comparisons
+- **composables/** — useCalculator (buildMeeting with remote/in-person, createParticipantsFromQuickMode), useShareReceipt (privacy & PII protection)
 
 ### Using nvm
 

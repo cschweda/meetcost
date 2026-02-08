@@ -77,6 +77,69 @@ describe('useCalculator', () => {
       expect(meeting.meetingDescription).not.toContain('<')
       expect(meeting.meetingDescription).toContain('xss')
     })
+
+    it('remote meeting has no inPersonCost', () => {
+      const participants = [
+        fulltimeParticipant('1', 90000),
+        contractorParticipant('2', 60),
+      ]
+      const meeting = buildMeeting(
+        participants,
+        3600,
+        Date.now(),
+        undefined,
+        'Stand Up',
+        undefined,
+        'remote'
+      )
+      expect(meeting.inPersonCost).toBeUndefined()
+      expect(meeting.meetingCost).toBeDefined()
+      expect(meeting.totalCost).toBe(meeting.meetingCost)
+      expect(meeting.format).toBe('remote')
+    })
+
+    it('in-person meeting with tax adds inPersonCost to totalCost', () => {
+      const participants = [
+        fulltimeParticipant('1', 90000),
+        fulltimeParticipant('2', 90000),
+      ]
+      const meeting = buildMeeting(
+        participants,
+        3600,
+        Date.now(),
+        undefined,
+        'Kickoff',
+        undefined,
+        'in-person',
+        true,
+        30,
+        20
+      )
+      expect(meeting.format).toBe('in-person')
+      expect(meeting.inPersonCost).toBeDefined()
+      expect(meeting.inPersonCost).toBeGreaterThan(0)
+      expect(meeting.meetingCost).toBeDefined()
+      expect(meeting.totalCost).toBe(meeting.meetingCost! + meeting.inPersonCost!)
+      expect(meeting.commuteMinutesPerPerson).toBe(30)
+      expect(meeting.inPersonExtrasPerPerson).toBe(20)
+    })
+
+    it('in-person without applyInPersonTax has no inPersonCost', () => {
+      const participants = [fulltimeParticipant('1', 90000)]
+      const meeting = buildMeeting(
+        participants,
+        3600,
+        Date.now(),
+        undefined,
+        'Stand Up',
+        undefined,
+        'in-person',
+        false,
+        30
+      )
+      expect(meeting.inPersonCost).toBeUndefined()
+      expect(meeting.totalCost).toBe(meeting.meetingCost)
+    })
   })
 
   describe('createParticipantsFromQuickMode', () => {
