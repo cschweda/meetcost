@@ -82,10 +82,51 @@ yarn test
 
 ### Testing
 
-Tests live in the `tests/` directory at the project root, mirroring the `app/` structure. Run with `yarn test`. Coverage includes:
+MeetingBurn is thoroughly tested with **86 unit tests** across 6 suites. Run with `yarn test`. Tests live in `tests/` at the project root, mirroring the `app/` structure.
 
-- **utils/** — calculations (including `calculateInPersonCost`), formatting, sanitize, comparisons
-- **composables/** — useCalculator (buildMeeting with remote/in-person, createParticipantsFromQuickMode), useShareReceipt (privacy & PII protection)
+| Suite | Tests | Coverage |
+|-------|-------|----------|
+| **calculations** | 22 | Hourly rates, cost-per-second, meeting cost, in-person cost, edge cases |
+| **formatting** | 15 | Currency, duration, dates, times, elapsed time |
+| **useShareReceipt** | 22 | Privacy, PII protection, share URL generation, PII exclusion |
+| **useCalculator** | 8 | Meeting building, remote/in-person, quick-mode participants |
+| **sanitize** | 11 | Input sanitization, XSS prevention |
+| **comparisons** | 8 | Cost-to-item comparisons |
+
+#### calculations (22 tests)
+
+Core cost math: salary-to-hourly conversion, cost-per-second, meeting cost, and in-person costs (commute + extras). Covers `calculateEffectiveHourlyRate`, `getCostPerSecond`, `getAverageHourlyRate`, `calculateMeetingCost`, and `calculateInPersonCost`. Verifies full-time (salary ÷ 2080) and contractor rates, ignores inactive participants, handles empty/negative inputs, and checks the default 5-person scenario (~6.5¢/second).
+
+#### formatting (15 tests)
+
+Display helpers: `formatCurrency` (USD, 2 decimals), `formatHourlyRate`, `formatDuration` (seconds/minutes/hours, singular/plural), `formatElapsedTime` (M:SS and H:MM:SS), `formatDate`, `formatTime`, `formatDateISO`, and `formatTime24`.
+
+#### useShareReceipt (22 tests) — Sharing & security
+
+Share-link privacy and PII protection:
+
+- **PII exclusion** — Excludes individual salaries, hourly rates, participant IDs, names, roles, meeting IDs, and email-like identifiers. Payload has only whitelisted keys (`t`, `d`, `n`, `c`, `a`, `s`, `m`, `f`, `ct`, `un`). No individual `effectiveHourlyRate` values; only aggregated counts and averages.
+- **Round-trip integrity** — Encode/decode preserves only safe, aggregated data. Invalid, corrupted, empty, or malformed base64 payloads return `null`.
+- **URL generation** — Share URLs use base64-safe characters and contain no raw sensitive data. Same meeting yields consistent URLs.
+- **Privacy guarantees** — Full encode/decode cycle leaks no PII. Payload has no `participants` array. URL parameter uses only base64-safe characters.
+
+These tests ensure share links never expose salary, compensation, or identifying information.
+
+#### useCalculator (8 tests)
+
+Meeting construction: `buildMeeting` returns correct structure, computes `totalCost` from participants and duration, sanitizes meeting descriptions (XSS prevention), and handles remote vs in-person (with/without in-person tax). `createParticipantsFromQuickMode` builds full-time (from salary) and contractor (from hourly rate) participants.
+
+#### sanitize (11 tests)
+
+Input sanitization for safe display and export: strips HTML tags, angle brackets, `javascript:` and `data:` protocols, control characters, and zero-width characters. Rejects non-string input, trims whitespace, enforces `maxLength`, and passes through safe strings.
+
+#### comparisons (8 tests)
+
+Cost-to-item utilities: `generateComparison` returns "0 items" for zero/negative cost and "N item" strings for positive cost. `generateComparisonList` returns up to N items, no duplicates, correct format, and positive quantities.
+
+#### Safe to use
+
+The app is **privacy-first** and **client-only**: your salary data, participant details, and meeting history never leave your device. The test suite verifies that sharing receipts and export flows do not leak PII.
 
 ### Using nvm
 
@@ -107,9 +148,9 @@ app/
 ├── utils/                   # formatting, calculations, comparisons, sanitize
 └── app.vue
 
-tests/                       # Vitest unit tests (separate from app)
-├── composables/             # useCalculator tests
-└── utils/                   # calculations, formatting, sanitize, comparisons tests
+tests/                       # Vitest unit tests (86 tests across 6 suites)
+├── composables/             # useCalculator, useShareReceipt
+└── utils/                   # calculations, formatting, sanitize, comparisons
 
 public/                      # Static assets (favicon, screenshots)
 meetcost.config.ts           # Single source of truth for app config (filename kept for compatibility)

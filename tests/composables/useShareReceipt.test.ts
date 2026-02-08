@@ -6,7 +6,8 @@ function createTestParticipant(
   id: string,
   employmentType: 'fulltime' | 'contractor' | 'unknown',
   annualSalary?: number,
-  hourlyRate?: number
+  hourlyRate?: number,
+  role?: string
 ): Participant {
   const participant: Participant = {
     id,
@@ -24,6 +25,7 @@ function createTestParticipant(
     participant.hourlyRate = hourlyRate
     participant.effectiveHourlyRate = hourlyRate
   }
+  if (role) participant.role = role
   return participant
 }
 
@@ -158,6 +160,83 @@ describe('useShareReceipt - Privacy & PII Protection', () => {
       expect(payload.n).toBe(1)
       expect(payload.d).toBe(1800)
     })
+
+    it('excludes participant role from payload', () => {
+      const participants = [
+        createTestParticipant('p1', 'fulltime', 90000, undefined, 'John Smith'),
+        createTestParticipant('p2', 'contractor', undefined, 75, 'VP Engineering'),
+        createTestParticipant('p3', 'unknown', undefined, 50, 'jane.doe@company.com'),
+      ]
+      const meeting = createTestMeeting(participants, 1800, 200)
+      const payload = meetingToPayload(meeting)
+      const payloadStr = JSON.stringify(payload)
+
+      expect(payloadStr).not.toContain('John Smith')
+      expect(payloadStr).not.toContain('VP Engineering')
+      expect(payloadStr).not.toContain('jane.doe')
+      expect(payloadStr).not.toContain('company.com')
+    })
+
+    it('excludes meeting id from payload', () => {
+      const participants = [createTestParticipant('p1', 'fulltime', 90000)]
+      const meeting = createTestMeeting(participants, 1800, 100)
+      meeting.id = 'mtg_sensitive-12345-internal-project-alpha'
+      const payload = meetingToPayload(meeting)
+      const payloadStr = JSON.stringify(payload)
+
+      expect(payloadStr).not.toContain('sensitive')
+      expect(payloadStr).not.toContain('internal-project')
+      expect(payloadStr).not.toContain('alpha')
+    })
+
+    it('payload has only whitelisted keys (no PII field names)', () => {
+      const participants = [
+        createTestParticipant('alice', 'fulltime', 90000),
+        createTestParticipant('bob', 'contractor', undefined, 75),
+      ]
+      const meeting = createTestMeeting(participants, 1800, 200)
+      const payload = meetingToPayload(meeting)
+      const allowedKeys = new Set(['t', 'd', 'n', 'c', 'a', 's', 'm', 'f', 'ct', 'un'])
+      const payloadKeys = Object.keys(payload) as string[]
+
+      payloadKeys.forEach((key) => {
+        expect(allowedKeys.has(key), `Payload must not contain unexpected key: ${key}`).toBe(true)
+      })
+      expect(payloadKeys.length).toBeLessThanOrEqual(allowedKeys.size)
+    })
+
+    it('contains no individual effectiveHourlyRate values', () => {
+      const participants = [
+        createTestParticipant('p1', 'fulltime', 50000),   // ~24/hr
+        createTestParticipant('p2', 'fulltime', 200000),  // ~96/hr
+        createTestParticipant('p3', 'contractor', undefined, 150),
+      ]
+      const meeting = createTestMeeting(participants, 3600, 350)
+      const payload = meetingToPayload(meeting)
+      const payloadStr = JSON.stringify(payload)
+
+      // Individual rates must not appear; only average (a) is allowed
+      expect(payloadStr).not.toContain('24.04')
+      expect(payloadStr).not.toContain('96.15')
+      expect(payloadStr).not.toContain('"150"')
+      expect(payloadStr).not.toContain('effectiveHourlyRate')
+    })
+
+    it('share URL contains no email addresses or personal identifiers', () => {
+      const participants = [
+        createTestParticipant('john.smith@acme.com', 'fulltime', 120000),
+        createTestParticipant('sarah-jones@example.org', 'contractor', undefined, 95),
+      ]
+      const meeting = createTestMeeting(participants, 1800, 300, 'private', 'Budget review')
+      const shareUrl = getShareUrl(meeting)
+
+      expect(shareUrl).not.toContain('john.smith')
+      expect(shareUrl).not.toContain('sarah-jones')
+      expect(shareUrl).not.toContain('acme.com')
+      expect(shareUrl).not.toContain('example.org')
+      expect(shareUrl).not.toContain('120000')
+      expect(shareUrl).not.toContain('95')
+    })
   })
 
   describe('encodeSharePayload & decodeSharePayload - round-trip integrity', () => {
@@ -211,6 +290,14 @@ describe('useShareReceipt - Privacy & PII Protection', () => {
     it('returns null for corrupted base64 payload', () => {
       const decoded = decodeSharePayload('YWJjZGVmZ2g=') // valid base64, but not JSON
       expect(decoded).toBeNull()
+    })
+
+    it('returns null for empty string payload', () => {
+      expect(decodeSharePayload('')).toBeNull()
+    })
+
+    it('returns null for malformed base64 with invalid characters', () => {
+      expect(decodeSharePayload('not===valid!!!')).toBeNull()
     })
   })
 

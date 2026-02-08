@@ -9,6 +9,10 @@ describe('sanitizeString', () => {
     expect(sanitizeString({} as unknown)).toBe('')
   })
 
+  it('returns empty string for empty input', () => {
+    expect(sanitizeString('')).toBe('')
+  })
+
   it('passes through safe strings', () => {
     expect(sanitizeString('hello')).toBe('hello')
     expect(sanitizeString('Meeting Stand Up')).toBe('Meeting Stand Up')
