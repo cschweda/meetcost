@@ -80,208 +80,6 @@ useSeoMeta({
         The receipt itemizes <strong>Company pays</strong> (meeting time) vs <strong>Each employee pays (avg)</strong> (per-person average—not exact; commute, daycare, coffee, etc. vary) and <strong>All employees together pay</strong> (total), so it’s clear who bears which cost.
       </p>
 
-      <h2 id="examples" class="text-xl font-semibold text-highlighted mt-10 mb-3">
-        Examples
-      </h2>
-      <p class="text-muted leading-relaxed text-sm mb-6 italic">
-        All salary and hourly rates in these examples are best guesses. Actual costs may be higher depending on your organization's compensation.
-      </p>
-
-      <div class="space-y-8">
-        <!-- Example 1 -->
-        <div class="rounded-xl border border-default bg-muted/10 p-6 border-l-4 border-l-primary">
-          <div class="flex items-start gap-4">
-            <div class="shrink-0 flex items-center justify-center size-14 rounded-xl bg-primary/15 text-primary">
-              <UIcon name="i-lucide-users-2" class="size-8" aria-hidden="true" />
-            </div>
-            <div class="min-w-0 flex-1">
-              <h4 class="text-lg font-semibold text-highlighted mb-2">Example 1: The 30‑minute sync (Remote)</h4>
-              <p class="text-muted text-sm mb-4">
-                3 people at $90K/year → 3 × ($90,000 ÷ 2,080) = $129.81/hr. Thirty minutes: $129.81 × 0.5 = <strong class="text-highlighted">$64.90</strong>.
-              </p>
-              <div class="rounded-lg bg-default/50 p-4 text-sm">
-                <p class="font-medium text-highlighted mb-2">Business equivalent:</p>
-                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
-                  <li>About 20-25 minutes of consultant time ($175/hr)</li>
-                  <li>1 enterprise software license per month</li>
-                  <li>4 project management licenses for a year ($15/mo each)</li>
-                </ul>
-                <p class="font-medium text-highlighted mt-3 mb-2">The lunch-break equivalent:</p>
-                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
-                  <li>~11 lattes or salads</li>
-                  <li>~5 burritos</li>
-                </ul>
-                <p class="text-muted text-sm mt-2 italic">—Could this have been a Slack or Teams message? Async updates often work for status syncs.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Example 2 -->
-        <div class="rounded-xl border border-default bg-muted/10 p-6 border-l-4 border-l-amber-500">
-          <div class="flex items-start gap-4">
-            <div class="shrink-0 flex items-center justify-center size-14 rounded-xl bg-amber-500/15 text-amber-600 dark:text-amber-400">
-              <UIcon name="i-lucide-repeat" class="size-8" aria-hidden="true" />
-            </div>
-            <div class="min-w-0 flex-1">
-              <h4 class="text-lg font-semibold text-highlighted mb-2">Example 2: The recurring meeting drain (Remote)</h4>
-              <p class="text-muted text-sm mb-4">
-                6-person team (avg $100K/year), 1-hour weekly sync. Per meeting: 6 × ($100,000 ÷ 2,080) × 1 = <strong class="text-highlighted">$288</strong>. Over 52 weeks: <strong class="text-highlighted">~$15,000/year</strong>.
-              </p>
-              <div class="rounded-lg bg-default/50 p-4 text-sm">
-                <p class="font-medium text-highlighted mb-2">Business equivalent:</p>
-                <p class="text-muted text-sm font-medium mt-2 mb-1">Per meeting:</p>
-                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
-                  <li>1.5 hours of consultant time ($175/hr)</li>
-                  <li>4 enterprise licenses per month ($75 each)</li>
-                </ul>
-                <p class="text-muted text-sm font-medium mt-2 mb-1">Per year:</p>
-                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
-                  <li>20 training course seats ($750 each)</li>
-                  <li>1 conference registration ($1,200)</li>
-                  <li>86 hours of consultant time ($175/hr)</li>
-                </ul>
-                <p class="font-medium text-highlighted mt-3 mb-2">The lunch-break equivalent:</p>
-                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
-                  <li>Per meeting: ~48 lattes or ~24 burritos</li>
-                  <li>Per year: ~2,500 lattes or ~1,250 burritos</li>
-                </ul>
-                <p class="text-muted text-sm mt-2 italic">—Could this have been a Slack or Teams message? Weekly syncs often repeat the same info—a shared doc or async update might suffice.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Example 3 -->
-        <div class="rounded-xl border border-default bg-muted/10 p-6 border-l-4 border-l-blue-500">
-          <div class="flex items-start gap-4">
-            <div class="shrink-0 flex items-center justify-center size-14 rounded-xl bg-blue-500/15 text-blue-600 dark:text-blue-400">
-              <UIcon name="i-lucide-users" class="size-8" aria-hidden="true" />
-            </div>
-            <div class="min-w-0 flex-1">
-              <h4 class="text-lg font-semibold text-highlighted mb-2">Example 3: Unit meeting with 15 attendees (In-person)</h4>
-              <p class="text-muted text-sm mb-4">
-                15 people (avg $95K/year), 1-hour in-person unit meeting. <strong class="text-highlighted">Meeting cost:</strong> 15 × ($95,000 ÷ 2,080) × 1 = $685. <strong class="text-highlighted">In-person tax</strong> (30 min commute, $15/person for coffee/parking): commute = $685 × (30÷60) = $343; extras = 15 × $15 = $225; in-person total = $568. <strong class="text-highlighted">Total:</strong> $685 + $568 = <strong class="text-highlighted">$1,253</strong> (company pays $685; employees pay $568).
-              </p>
-              <div class="rounded-lg bg-default/50 p-4 text-sm">
-                <p class="font-medium text-highlighted mb-2">Business equivalent (total incl. in-person tax):</p>
-                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
-                  <li>~7 hours of consultant time ($175/hr)</li>
-                  <li>1 conference registration ($1,200)</li>
-                  <li>17 enterprise software licenses per month ($75 each)</li>
-                </ul>
-                <p class="font-medium text-highlighted mt-3 mb-2">The lunch-break equivalent:</p>
-                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
-                  <li>~210 lattes or salads</li>
-                  <li>~105 burritos</li>
-                </ul>
-                <p class="text-muted text-sm mt-2 italic">—Could this have been a Slack or Teams message? Large meetings sap concentration from knowledge workers; a thread or announcement often reaches everyone without the cost.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Example 4: Public sector -->
-        <div class="rounded-xl border border-default bg-muted/10 p-6 border-l-4 border-l-violet-500">
-          <div class="flex items-start gap-4">
-            <div class="shrink-0 flex items-center justify-center size-14 rounded-xl bg-violet-500/15 text-violet-600 dark:text-violet-400">
-              <UIcon name="i-lucide-landmark" class="size-8" aria-hidden="true" />
-            </div>
-            <div class="min-w-0 flex-1">
-              <h4 class="text-lg font-semibold text-highlighted mb-2">Example 4: Public agency quarterly full-day retreat (Remote)</h4>
-              <p class="text-muted text-sm mb-4">
-                75 people (avg $70K/year, blended public-sector rate), 8am–4:30pm with 1 hour for lunch = 7.5 hours. At 8am: <strong class="text-highlighted">$0</strong>. At 4:30pm: 75 × ($70,000 ÷ 2,080) × 7.5 = <strong class="text-highlighted">~$18,900</strong> per meeting. Quarterly = 4× per year: <strong class="text-highlighted">~$75,600</strong> annually. <em>Taxpayer dollars.</em>
-              </p>
-              <div class="rounded-lg bg-default/50 p-4 text-sm">
-                <p class="font-medium text-highlighted mb-2">Business equivalent (taxpayer dollars):</p>
-                <p class="text-muted text-sm font-medium mt-2 mb-1">Per meeting:</p>
-                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
-                  <li>25 training course seats ($750 each)</li>
-                  <li>16 laptop replacements ($1,200 each)</li>
-                  <li>108 hours of consultant time ($175/hr)</li>
-                </ul>
-                <p class="text-muted text-sm font-medium mt-2 mb-1">Per year:</p>
-                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
-                  <li>100 training course seats ($750 each)</li>
-                  <li>63 laptop replacements ($1,200 each)</li>
-                  <li>Full-time entry-level public-sector salary</li>
-                </ul>
-                <p class="font-medium text-highlighted mt-3 mb-2">The lunch-break equivalent:</p>
-                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
-                  <li>Per meeting: ~3,150 lattes or ~1,575 burritos</li>
-                  <li>Per year: ~12,600 lattes or ~6,300 burritos</li>
-                </ul>
-                <p class="text-muted text-sm mt-2 italic">—Retreats serve team-building. But routine "all hands" updates could often be a Slack or Teams message instead.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Example 5 -->
-        <div class="rounded-xl border border-default bg-muted/10 p-6 border-l-4 border-l-emerald-500">
-          <div class="flex items-start gap-4">
-            <div class="shrink-0 flex items-center justify-center size-14 rounded-xl bg-emerald-500/15 text-emerald-600 dark:text-emerald-400">
-              <UIcon name="i-lucide-sunrise" class="size-8" aria-hidden="true" />
-            </div>
-            <div class="min-w-0 flex-1">
-              <h4 class="text-lg font-semibold text-highlighted mb-2">Example 5: 15-minute daily standup (Remote)</h4>
-              <p class="text-muted text-sm mb-4">
-                5-person team (avg $100K/year), 15-minute daily standup. 5 × ($100,000 ÷ 2,080) × 0.25 = <strong class="text-highlighted">$60</strong> per meeting. Daily = ~260 working days/year: <strong class="text-highlighted">~$15,600/year</strong>.
-              </p>
-              <div class="rounded-lg bg-default/50 p-4 text-sm">
-                <p class="font-medium text-highlighted mb-2">Business equivalent:</p>
-                <p class="text-muted text-sm font-medium mt-2 mb-1">Per day:</p>
-                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
-                  <li>20 minutes of consultant time ($175/hr)</li>
-                </ul>
-                <p class="text-muted text-sm font-medium mt-2 mb-1">Per year:</p>
-                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
-                  <li>21 training course seats ($750 each)</li>
-                  <li>13 laptop replacements ($1,200 each)</li>
-                  <li>208 enterprise software licenses per month ($75 each)</li>
-                  <li>89 hours of consultant time ($175/hr)</li>
-                </ul>
-                <p class="font-medium text-highlighted mt-3 mb-2">The lunch-break equivalent:</p>
-                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
-                  <li>Per day: ~10 lattes or ~5 burritos</li>
-                  <li>Per year: ~2,600 lattes or ~1,300 burritos</li>
-                </ul>
-                <p class="text-muted text-sm mt-2 italic">—Could this have been a Slack or Teams message? Daily standups often could—async updates can be just as effective without disrupting deep work for makers and creatives.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Example 6: In-person with tax -->
-        <div class="rounded-xl border border-default bg-muted/10 p-6 border-l-4 border-l-rose-500">
-          <div class="flex items-start gap-4">
-            <div class="shrink-0 flex items-center justify-center size-14 rounded-xl bg-rose-500/15 text-rose-600 dark:text-rose-400">
-              <UIcon name="i-lucide-map-pin" class="size-8" aria-hidden="true" />
-            </div>
-            <div class="min-w-0 flex-1">
-              <h4 class="text-lg font-semibold text-highlighted mb-2">Example 6: 4-person in-person kickoff (In-person)</h4>
-              <p class="text-muted text-sm mb-4">
-                4 people at $90K/year, 1-hour in-person kickoff. <strong class="text-highlighted">Meeting cost:</strong> 4 × ($90,000 ÷ 2,080) × 1 = $173. <strong class="text-highlighted">In-person tax</strong> (30 min commute, $20/person for coffee/parking): commute = $173 × (30÷60) = $87; extras = 4 × $20 = $80; in-person total = $167. <strong class="text-highlighted">Total:</strong> $173 + $167 = <strong class="text-highlighted">$340</strong> (company pays $173; employees pay $167, ~$42 avg per person).
-              </p>
-              <div class="rounded-lg bg-default/50 p-4 text-sm">
-                <p class="font-medium text-highlighted mb-2">Business equivalent (total incl. in-person tax):</p>
-                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
-                  <li>~2 hours of consultant time ($175/hr)</li>
-                  <li>4–5 enterprise licenses per month ($75 each)</li>
-                </ul>
-                <p class="font-medium text-highlighted mt-3 mb-2">The lunch-break equivalent:</p>
-                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
-                  <li>~57 lattes or salads</li>
-                  <li>~28 burritos (or a Chipotle party for the whole team)</li>
-                </ul>
-                <p class="text-muted text-sm mt-2 italic">—In-person has value for relationship-building. But the hidden employee cost (commute, parking, daycare) is real—often paid out of pocket.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Sharing & Privacy section at the bottom -->
       <h2 id="sharing" class="text-xl font-semibold text-highlighted mt-16 mb-3">
         Sharing & Privacy
       </h2>
@@ -344,6 +142,378 @@ useSeoMeta({
       <p class="text-muted leading-relaxed mb-4">
         <strong>Bottom line:</strong> Sharing is safe because you choose who gets the link, and the link contains only summary data—never individual compensation details.
       </p>
+
+      <h2 id="examples" class="text-xl font-semibold text-highlighted mt-16 mb-3">
+        Examples
+      </h2>
+      <p class="text-muted leading-relaxed text-sm mb-6 italic">
+        All salary and hourly rates in these examples are best guesses. Actual costs may be higher depending on your organization's compensation.
+      </p>
+
+      <div class="space-y-8">
+        <!-- Example 1 -->
+        <div class="rounded-xl border border-default bg-muted/10 p-6 border-l-4 border-l-primary">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 flex items-center justify-center size-14 rounded-xl bg-primary/15 text-primary">
+              <UIcon name="i-lucide-users-2" class="size-8" aria-hidden="true" />
+            </div>
+            <div class="min-w-0 flex-1">
+              <h4 class="text-lg font-semibold text-highlighted mb-2">Example 1: The 30‑minute sync (Remote)</h4>
+              <div class="text-muted text-sm mb-3 space-y-1">
+                <p><strong>Format:</strong> Remote · <strong>Sector:</strong> Private · <strong>Preset:</strong> Tech / Software</p>
+                <p><strong>Participants:</strong> 3 people at $97K/year · <strong>Duration:</strong> 30 minutes</p>
+              </div>
+              <ul class="text-muted text-sm mb-4 space-y-1 list-none">
+                <li><strong>Meeting cost:</strong> 3 × ($97,000 ÷ 2,080) × 0.5 hr = <strong class="text-highlighted">$69.95</strong></li>
+                <li>Company pays $69.95</li>
+              </ul>
+              <div class="rounded-lg bg-default/50 p-4 text-sm">
+                <p class="font-medium text-highlighted mb-2">Business equivalent:</p>
+                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
+                  <li>~25 minutes of consultant time ($175/hr)</li>
+                  <li>1 enterprise software license per month</li>
+                  <li>4 project management licenses for a year ($15/mo each)</li>
+                </ul>
+                <p class="font-medium text-highlighted mt-3 mb-2">Lunch-break equivalent:</p>
+                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
+                  <li>~12 lattes or salads</li>
+                  <li>~6 burritos</li>
+                </ul>
+                <p class="text-muted text-sm mt-2 italic">—Could this have been a Slack or Teams message? Async updates often work for status syncs.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Example 2 -->
+        <div class="rounded-xl border border-default bg-muted/10 p-6 border-l-4 border-l-amber-500">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 flex items-center justify-center size-14 rounded-xl bg-amber-500/15 text-amber-600 dark:text-amber-400">
+              <UIcon name="i-lucide-repeat" class="size-8" aria-hidden="true" />
+            </div>
+            <div class="min-w-0 flex-1">
+              <h4 class="text-lg font-semibold text-highlighted mb-2">Example 2: The recurring meeting drain (Remote)</h4>
+              <div class="text-muted text-sm mb-3 space-y-1">
+                <p><strong>Format:</strong> Remote · <strong>Sector:</strong> Private · <strong>Preset:</strong> Pharma / Biotech</p>
+                <p><strong>Participants:</strong> 6 people at $100K/year · <strong>Duration:</strong> 1 hour (weekly)</p>
+              </div>
+              <ul class="text-muted text-sm mb-4 space-y-1 list-none">
+                <li><strong>Meeting cost:</strong> 6 × ($100,000 ÷ 2,080) × 1 hr = <strong class="text-highlighted">$288</strong> per meeting</li>
+                <li>Per year (52 weeks): <strong class="text-highlighted">~$15,000</strong></li>
+                <li>Company pays $288/meeting</li>
+              </ul>
+              <div class="rounded-lg bg-default/50 p-4 text-sm">
+                <p class="font-medium text-highlighted mb-2">Business equivalent:</p>
+                <p class="text-muted text-sm font-medium mt-2 mb-1">Per meeting:</p>
+                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
+                  <li>1.5 hours of consultant time ($175/hr)</li>
+                  <li>4 enterprise licenses per month ($75 each)</li>
+                </ul>
+                <p class="text-muted text-sm font-medium mt-2 mb-1">Per year:</p>
+                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
+                  <li>20 training course seats ($750 each)</li>
+                  <li>1 conference registration ($1,200)</li>
+                  <li>86 hours of consultant time ($175/hr)</li>
+                </ul>
+                <p class="font-medium text-highlighted mt-3 mb-2">Lunch-break equivalent:</p>
+                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
+                  <li>Per meeting: ~48 lattes or ~24 burritos</li>
+                  <li>Per year: ~2,500 lattes or ~1,250 burritos</li>
+                </ul>
+                <p class="text-muted text-sm mt-2 italic">—Could this have been a Slack or Teams message? Weekly syncs often repeat the same info—a shared doc or async update might suffice.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Example 3 -->
+        <div class="rounded-xl border border-default bg-muted/10 p-6 border-l-4 border-l-blue-500">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 flex items-center justify-center size-14 rounded-xl bg-blue-500/15 text-blue-600 dark:text-blue-400">
+              <UIcon name="i-lucide-users" class="size-8" aria-hidden="true" />
+            </div>
+            <div class="min-w-0 flex-1">
+              <h4 class="text-lg font-semibold text-highlighted mb-2">Example 3: Unit meeting with 15 attendees (In-person)</h4>
+              <div class="text-muted text-sm mb-3 space-y-1">
+                <p><strong>Format:</strong> In-person · <strong>Sector:</strong> Private · <strong>Preset:</strong> Corporate</p>
+                <p><strong>Participants:</strong> 15 people at $88K/year · <strong>Duration:</strong> 1 hour</p>
+                <p><strong>In-person:</strong> 30 min commute, $15/person coffee/parking</p>
+              </div>
+              <ul class="text-muted text-sm mb-4 space-y-1 list-none">
+                <li><strong>Meeting cost:</strong> 15 × ($88,000 ÷ 2,080) × 1 hr = $635</li>
+                <li><strong>In-person tax:</strong> Commute $635 × (30÷60) = $317; Extras 15 × $15 = $225 → <strong class="text-highlighted">$542</strong></li>
+                <li><strong>Total:</strong> <strong class="text-highlighted">$1,177</strong> · Company $635; employees $542</li>
+              </ul>
+              <div class="rounded-lg bg-default/50 p-4 text-sm">
+                <p class="font-medium text-highlighted mb-2">Business equivalent:</p>
+                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
+                  <li>~7 hours of consultant time ($175/hr)</li>
+                  <li>1 conference registration ($1,200)</li>
+                  <li>16 enterprise software licenses per month ($75 each)</li>
+                </ul>
+                <p class="font-medium text-highlighted mt-3 mb-2">Lunch-break equivalent:</p>
+                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
+                  <li>~196 lattes or salads</li>
+                  <li>~98 burritos</li>
+                </ul>
+                <p class="text-muted text-sm mt-2 italic">—Could this have been a Slack or Teams message? Large meetings sap concentration from knowledge workers; a thread or announcement often reaches everyone without the cost.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Example 4 -->
+        <div class="rounded-xl border border-default bg-muted/10 p-6 border-l-4 border-l-violet-500">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 flex items-center justify-center size-14 rounded-xl bg-violet-500/15 text-violet-600 dark:text-violet-400">
+              <UIcon name="i-lucide-landmark" class="size-8" aria-hidden="true" />
+            </div>
+            <div class="min-w-0 flex-1">
+              <h4 class="text-lg font-semibold text-highlighted mb-2">Example 4: Public agency quarterly full-day retreat (Remote)</h4>
+              <div class="text-muted text-sm mb-3 space-y-1">
+                <p><strong>Format:</strong> Remote · <strong>Sector:</strong> Public (taxpayer dollars) · <strong>Preset:</strong> Government / Public Sector</p>
+                <p><strong>Participants:</strong> 75 people at $75K/year · <strong>Duration:</strong> 8am–4:30pm with 1 hr lunch = 7.5 hours</p>
+              </div>
+              <ul class="text-muted text-sm mb-4 space-y-1 list-none">
+                <li><strong>Meeting cost:</strong> 75 × ($75,000 ÷ 2,080) × 7.5 hrs = <strong class="text-highlighted">~$20,253</strong> per meeting</li>
+                <li>Quarterly (4×/year): <strong class="text-highlighted">~$81,000</strong> annually</li>
+                <li>Agency pays $20,253/meeting</li>
+              </ul>
+              <div class="rounded-lg bg-default/50 p-4 text-sm">
+                <p class="font-medium text-highlighted mb-2">Business equivalent:</p>
+                <p class="text-muted text-sm font-medium mt-2 mb-1">Per meeting:</p>
+                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
+                  <li>27 training course seats ($750 each)</li>
+                  <li>17 laptop replacements ($1,200 each)</li>
+                  <li>116 hours of consultant time ($175/hr)</li>
+                </ul>
+                <p class="text-muted text-sm font-medium mt-2 mb-1">Per year:</p>
+                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
+                  <li>108 training course seats ($750 each)</li>
+                  <li>68 laptop replacements ($1,200 each)</li>
+                  <li>Full-time entry-level public-sector salary</li>
+                </ul>
+                <p class="font-medium text-highlighted mt-3 mb-2">Lunch-break equivalent:</p>
+                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
+                  <li>Per meeting: ~4,500 lattes or ~2,130 burritos</li>
+                  <li>Per year: ~18,000 lattes or ~8,500 burritos</li>
+                </ul>
+                <p class="text-muted text-sm mt-2 italic">—Retreats serve team-building. But routine "all hands" updates could often be a Slack or Teams message instead.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Example 5 -->
+        <div class="rounded-xl border border-default bg-muted/10 p-6 border-l-4 border-l-emerald-500">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 flex items-center justify-center size-14 rounded-xl bg-emerald-500/15 text-emerald-600 dark:text-emerald-400">
+              <UIcon name="i-lucide-sunrise" class="size-8" aria-hidden="true" />
+            </div>
+            <div class="min-w-0 flex-1">
+              <h4 class="text-lg font-semibold text-highlighted mb-2">Example 5: 15-minute daily standup (Remote)</h4>
+              <div class="text-muted text-sm mb-3 space-y-1">
+                <p><strong>Format:</strong> Remote · <strong>Sector:</strong> Private · <strong>Preset:</strong> Finance / Banking</p>
+                <p><strong>Participants:</strong> 5 people at $110K/year · <strong>Duration:</strong> 15 minutes (daily)</p>
+              </div>
+              <ul class="text-muted text-sm mb-4 space-y-1 list-none">
+                <li><strong>Meeting cost:</strong> 5 × ($110,000 ÷ 2,080) × 0.25 hr = <strong class="text-highlighted">$66</strong> per meeting</li>
+                <li>Per year (~260 days): <strong class="text-highlighted">~$17,160</strong></li>
+                <li>Company pays $66/meeting</li>
+              </ul>
+              <div class="rounded-lg bg-default/50 p-4 text-sm">
+                <p class="font-medium text-highlighted mb-2">Business equivalent:</p>
+                <p class="text-muted text-sm font-medium mt-2 mb-1">Per day:</p>
+                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
+                  <li>23 minutes of consultant time ($175/hr)</li>
+                </ul>
+                <p class="text-muted text-sm font-medium mt-2 mb-1">Per year:</p>
+                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
+                  <li>23 training course seats ($750 each)</li>
+                  <li>14 laptop replacements ($1,200 each)</li>
+                  <li>229 enterprise software licenses per month ($75 each)</li>
+                  <li>98 hours of consultant time ($175/hr)</li>
+                </ul>
+                <p class="font-medium text-highlighted mt-3 mb-2">Lunch-break equivalent:</p>
+                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
+                  <li>Per day: ~11 lattes or ~5 burritos</li>
+                  <li>Per year: ~2,860 lattes or ~1,430 burritos</li>
+                </ul>
+                <p class="text-muted text-sm mt-2 italic">—Could this have been a Slack or Teams message? Daily standups often could—async updates can be just as effective without disrupting deep work for makers and creatives.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Example 6 -->
+        <div class="rounded-xl border border-default bg-muted/10 p-6 border-l-4 border-l-rose-500">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 flex items-center justify-center size-14 rounded-xl bg-rose-500/15 text-rose-600 dark:text-rose-400">
+              <UIcon name="i-lucide-map-pin" class="size-8" aria-hidden="true" />
+            </div>
+            <div class="min-w-0 flex-1">
+              <h4 class="text-lg font-semibold text-highlighted mb-2">Example 6: 4-person in-person kickoff (In-person)</h4>
+              <div class="text-muted text-sm mb-3 space-y-1">
+                <p><strong>Format:</strong> In-person · <strong>Sector:</strong> Private · <strong>Preset:</strong> Energy / Utilities</p>
+                <p><strong>Participants:</strong> 4 people at $90K/year · <strong>Duration:</strong> 1 hour</p>
+                <p><strong>In-person:</strong> 30 min commute, $20/person coffee/parking</p>
+              </div>
+              <ul class="text-muted text-sm mb-4 space-y-1 list-none">
+                <li><strong>Meeting cost:</strong> 4 × ($90,000 ÷ 2,080) × 1 hr = $173</li>
+                <li><strong>In-person tax:</strong> Commute $173 × (30÷60) = $87; Extras 4 × $20 = $80 → <strong class="text-highlighted">$167</strong></li>
+                <li><strong>Total:</strong> <strong class="text-highlighted">$340</strong> · Company $173; employees $167 (~$42/person avg)</li>
+              </ul>
+              <div class="rounded-lg bg-default/50 p-4 text-sm">
+                <p class="font-medium text-highlighted mb-2">Business equivalent:</p>
+                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
+                  <li>~2 hours of consultant time ($175/hr)</li>
+                  <li>4–5 enterprise licenses per month ($75 each)</li>
+                </ul>
+                <p class="font-medium text-highlighted mt-3 mb-2">Lunch-break equivalent:</p>
+                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
+                  <li>~57 lattes or ~28 burritos</li>
+                </ul>
+                <p class="text-muted text-sm mt-2 italic">—In-person has value for relationship-building. But the hidden employee cost (commute, parking, daycare) is real—often paid out of pocket.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Example 7 -->
+        <div class="rounded-xl border border-default bg-muted/10 p-6 border-l-4 border-l-cyan-500">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 flex items-center justify-center size-14 rounded-xl bg-cyan-500/15 text-cyan-600 dark:text-cyan-400">
+              <UIcon name="i-lucide-landmark" class="size-8" aria-hidden="true" />
+            </div>
+            <div class="min-w-0 flex-1">
+              <h4 class="text-lg font-semibold text-highlighted mb-2">Example 7: 75-person in-person all-hands all-day (In-person)</h4>
+              <div class="text-muted text-sm mb-3 space-y-1">
+                <p><strong>Format:</strong> In-person · <strong>Sector:</strong> Public (taxpayer dollars) · <strong>Preset:</strong> Government / Public Sector</p>
+                <p><strong>Participants:</strong> 75 people at $75K/year · <strong>Duration:</strong> 8:30am–5pm with 30-min lunch = 8 hours</p>
+                <p><strong>In-person:</strong> 30 min commute, $15/person coffee/parking</p>
+              </div>
+              <ul class="text-muted text-sm mb-4 space-y-1 list-none">
+                <li><strong>Meeting cost:</strong> 75 × ($75,000 ÷ 2,080) × 8 hrs = $21,635</li>
+                <li><strong>In-person tax:</strong> Commute $2,704/hr × (30÷60) = $1,352; Extras 75 × $15 = $1,125 → <strong class="text-highlighted">$2,477</strong></li>
+                <li><strong>Total:</strong> <strong class="text-highlighted">~$24,112</strong> · Agency $21,635; employees $2,477 (~$33/person avg)</li>
+              </ul>
+              <div class="rounded-lg bg-default/50 p-4 text-sm">
+                <p class="font-medium text-highlighted mb-2">Business equivalent:</p>
+                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
+                  <li>~138 hours of consultant time ($175/hr)</li>
+                  <li>~32 training course seats ($750 each)</li>
+                  <li>~20 laptop replacements ($1,200 each)</li>
+                </ul>
+                <p class="font-medium text-highlighted mt-3 mb-2">Lunch-break equivalent:</p>
+                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
+                  <li>~5,360 lattes or ~2,540 burritos</li>
+                </ul>
+                <p class="text-muted text-sm mt-2 italic">—Full-day in-person gatherings at scale carry a steep cost. Much of the employee burden (commute, parking, lunch) is paid out of pocket—often by people who could have received the same updates remotely.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Example 8 -->
+        <div class="rounded-xl border border-default bg-muted/10 p-6 border-l-4 border-l-indigo-500">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 flex items-center justify-center size-14 rounded-xl bg-indigo-500/15 text-indigo-600 dark:text-indigo-400">
+              <UIcon name="i-lucide-briefcase" class="size-8" aria-hidden="true" />
+            </div>
+            <div class="min-w-0 flex-1">
+              <h4 class="text-lg font-semibold text-highlighted mb-2">Example 8: 2-hour strategy session with consultants (Remote)</h4>
+              <div class="text-muted text-sm mb-3 space-y-1">
+                <p><strong>Format:</strong> Remote · <strong>Sector:</strong> Private · <strong>Preset:</strong> Consulting</p>
+                <p><strong>Participants:</strong> 3 contractors at $150/hr · <strong>Duration:</strong> 2 hours</p>
+              </div>
+              <ul class="text-muted text-sm mb-4 space-y-1 list-none">
+                <li><strong>Meeting cost:</strong> 3 × $150/hr × 2 hrs = <strong class="text-highlighted">$900</strong></li>
+                <li>Client pays $900</li>
+              </ul>
+              <div class="rounded-lg bg-default/50 p-4 text-sm">
+                <p class="font-medium text-highlighted mb-2">Business equivalent:</p>
+                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
+                  <li>~5 hours of consultant time ($175/hr)</li>
+                  <li>12 enterprise software licenses per month ($75 each)</li>
+                  <li>1.2 training course seats ($750 each)</li>
+                </ul>
+                <p class="font-medium text-highlighted mt-3 mb-2">Lunch-break equivalent:</p>
+                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
+                  <li>~150 lattes or ~75 burritos</li>
+                </ul>
+                <p class="text-muted text-sm mt-2 italic">—Strategy sessions have value. But with contractor rates, every minute counts—a concise agenda and clear deliverables maximize ROI.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Example 9 -->
+        <div class="rounded-xl border border-default bg-muted/10 p-6 border-l-4 border-l-red-500">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 flex items-center justify-center size-14 rounded-xl bg-red-500/15 text-red-600 dark:text-red-400">
+              <UIcon name="i-lucide-heart-pulse" class="size-8" aria-hidden="true" />
+            </div>
+            <div class="min-w-0 flex-1">
+              <h4 class="text-lg font-semibold text-highlighted mb-2">Example 9: 45-minute healthcare staff huddle (Remote)</h4>
+              <div class="text-muted text-sm mb-3 space-y-1">
+                <p><strong>Format:</strong> Remote · <strong>Sector:</strong> Private · <strong>Preset:</strong> Healthcare</p>
+                <p><strong>Participants:</strong> 8 people at $85K/year · <strong>Duration:</strong> 45 minutes</p>
+              </div>
+              <ul class="text-muted text-sm mb-4 space-y-1 list-none">
+                <li><strong>Meeting cost:</strong> 8 × ($85,000 ÷ 2,080) × 0.75 hr = <strong class="text-highlighted">$245</strong></li>
+                <li>Organization pays $245</li>
+              </ul>
+              <div class="rounded-lg bg-default/50 p-4 text-sm">
+                <p class="font-medium text-highlighted mb-2">Business equivalent:</p>
+                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
+                  <li>~1.4 hours of consultant time ($175/hr)</li>
+                  <li>3 enterprise software licenses per month ($75 each)</li>
+                </ul>
+                <p class="font-medium text-highlighted mt-3 mb-2">Lunch-break equivalent:</p>
+                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
+                  <li>~41 lattes or ~20 burritos</li>
+                </ul>
+                <p class="text-muted text-sm mt-2 italic">—Healthcare staff meetings coordinate care and compliance. But 45 minutes adds up across departments—a quick async huddle or shared doc can often capture handoffs without blocking clinical time.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Example 10 -->
+        <div class="rounded-xl border border-default bg-muted/10 p-6 border-l-4 border-l-orange-500">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 flex items-center justify-center size-14 rounded-xl bg-orange-500/15 text-orange-600 dark:text-orange-400">
+              <UIcon name="i-lucide-graduation-cap" class="size-8" aria-hidden="true" />
+            </div>
+            <div class="min-w-0 flex-1">
+              <h4 class="text-lg font-semibold text-highlighted mb-2">Example 10: Nonprofit board meeting (In-person)</h4>
+              <div class="text-muted text-sm mb-3 space-y-1">
+                <p><strong>Format:</strong> In-person · <strong>Sector:</strong> Private (nonprofit) · <strong>Preset:</strong> Nonprofit / Education</p>
+                <p><strong>Participants:</strong> 12 people at $68K/year · <strong>Duration:</strong> 1 hour</p>
+                <p><strong>In-person:</strong> 30 min commute, $10/person coffee/parking</p>
+              </div>
+              <ul class="text-muted text-sm mb-4 space-y-1 list-none">
+                <li><strong>Meeting cost:</strong> 12 × ($68,000 ÷ 2,080) × 1 hr = $392</li>
+                <li><strong>In-person tax:</strong> Commute $392 × (30÷60) = $196; Extras 12 × $10 = $120 → <strong class="text-highlighted">$316</strong></li>
+                <li><strong>Total:</strong> <strong class="text-highlighted">$708</strong> · Org $392; board members $316 (~$26/person avg)</li>
+              </ul>
+              <div class="rounded-lg bg-default/50 p-4 text-sm">
+                <p class="font-medium text-highlighted mb-2">Business equivalent:</p>
+                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
+                  <li>~4 hours of consultant time ($175/hr)</li>
+                  <li>9 enterprise software licenses per month ($75 each)</li>
+                  <li>1 conference registration ($1,200)</li>
+                </ul>
+                <p class="font-medium text-highlighted mt-3 mb-2">Lunch-break equivalent:</p>
+                <ul class="text-muted space-y-1 text-sm list-disc list-inside">
+                  <li>~118 lattes or ~59 burritos</li>
+                </ul>
+                <p class="text-muted text-sm mt-2 italic">—Board meetings drive governance. But nonprofits run lean—every dollar diverted to meetings is one less for mission. Hybrid or async options can trim cost without losing alignment.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <p class="text-muted leading-relaxed mt-8">
         <NuxtLink to="/" class="text-primary hover:underline font-medium">

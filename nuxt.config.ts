@@ -17,13 +17,7 @@ export default defineNuxtConfig({
   },
 
   ogImage: {
-    enabled: true,
-    defaults: {
-      component: 'OgImageStatic',
-      props: {
-        image: '/og-image.png',
-      },
-    },
+    enabled: false,
   },
 
   css: ['~/assets/css/main.css'],
